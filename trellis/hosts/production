@@ -2,7 +2,7 @@
 # List each machine only once per [group], even if it will host multiple sites.
 
 [production]
-69.50.139.233
+69.50.139.233 ansible_ssh_port=33654
 
 [web]
-69.50.139.233
+69.50.139.233 ansible_ssh_port=33654
