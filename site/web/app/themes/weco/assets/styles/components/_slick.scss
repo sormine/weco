@@ -1,0 +1,94 @@
+.slick-loading {
+  .slick-list {
+    overflow: inherit !important;
+  }
+}
+
+.slick-prev, .slick-next {
+  font-size: 0;
+  line-height: 0;
+  position: absolute;
+  top: 50%;
+  display: block;
+  padding: 40px 20px;
+  -webkit-transform: translate(0, -50%);
+  -ms-transform: translate(0, -50%);
+  transform: translate(0, -50%);
+  cursor: pointer;
+  color: #fff;
+  border: none;
+  outline: none;
+  background: #ed1c24;
+}
+
+.slick-prev:hover,
+.slick-prev:focus,
+.slick-next:hover,
+.slick-next:focus {
+  color: transparent;
+  outline: none;
+}
+
+.slick-prev:hover:before,
+.slick-prev:focus:before,
+.slick-next:hover:before,
+.slick-next:focus:before {
+  opacity: 1;
+}
+
+.slick-prev.slick-disabled:before,
+.slick-next.slick-disabled:before {
+  opacity: .25;
+}
+
+.slick-prev:before,
+.slick-next:before {
+  font-family: 'slick';
+  font-size: 20px;
+  line-height: 1;
+  opacity: .75;
+  color: white;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.slick-prev {
+  left: 75px;
+	z-index: 500;
+
+  &:before {
+    content: '\f2fa';
+    font-family: 'Material-Design-Iconic-Font';
+  }
+}
+
+.slick-next {
+  right: 0;
+
+  &:before {
+    content: '\f2fb';
+    font-family: 'Material-Design-Iconic-Font';
+  }
+}
+
+[dir='rtl'] {
+  .slick-prev {
+    right: 0;
+    left: auto;
+
+    &:before {
+      content: '\f2fa';
+      font-family: 'Material-Design-Iconic-Font';
+    }
+  }
+
+  .slick-next {
+    right: auto;
+    left: 75px;
+
+    &:before {
+      content: '\f2fb';
+      font-family: 'Material-Design-Iconic-Font';
+    }
+  }
+}

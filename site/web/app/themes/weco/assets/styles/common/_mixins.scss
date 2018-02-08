@@ -1,0 +1,21 @@
+@mixin prefix($property, $value, $prefixes: ()) {
+	@each $prefix in $prefixes {
+		#{'-'+$prefix+'-'+$property}: $value;
+	}
+	#{$property}: $value;
+}
+
+@mixin placeholder($property, $value) {
+	&::-webkit-input-placeholder {
+		$property: $value;
+	}
+	&::-moz-placeholder {
+		$property: $value;
+	}
+	&:-ms-input-placeholder {
+		$property: $value;
+	}
+	&:-moz-placeholder {
+		$property: $value;
+	}
+}

@@ -1,0 +1,23 @@
+.search-form {
+	input.search-field {
+		border: 1px solid #b8b8b8;
+		border-radius: 20px;	
+		padding: 0.5vw 1vw;
+		width: 100%;
+		font-size: 0.8em;
+		position: relative;
+
+		&::-webkit-input-placeholder {
+			color:#b8b8b8;
+		}
+		&::-moz-placeholder {
+			color:#b8b8b8;
+		}
+		&:-ms-input-placeholder {
+			color:#b8b8b8;
+		}
+		&:-moz-placeholder {
+			color:#b8b8b8;
+		}
+	}
+}

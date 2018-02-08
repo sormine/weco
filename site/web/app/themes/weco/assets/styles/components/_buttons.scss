@@ -1,0 +1,15 @@
+.iconSearch {
+	position: absolute;
+	top: 7px;
+	right: 25px;
+	z-index: 1000;
+	border: none;
+	background: none;
+	display: block;
+	text-indent: -500px;
+	background: url(#{$path-images}/magnify.png) no-repeat;
+	background-size: 85%;
+	width: 27px;
+	height: 27px;
+	cursor: pointer;
+}

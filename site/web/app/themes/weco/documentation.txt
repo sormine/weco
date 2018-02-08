@@ -1,0 +1,25 @@
+DOCUMENTATION WECO
+
+
+Préface:
+Pour Weco, nous avons décidé d'utilisé un boilerplate avec des outils web modernes (composer, npm, gulp, bower, wp-cli, vagrant, etc.) et une sécurité plus avancé grâce à roots (voir https://roots.io/).
+
+
+Custom Post Type & Custom Fields:
+Pour éviter un surplus de codage dans nos ficheirs .php, nous utilisons ACF et CPT UI pour créer et configurer tous les custom post type & fields.  
+
+
+Menu dynamique:
+1-
+La première navigation est la principale puisqu'elle est la plus importante, assemble toutes les pages et est accessible sur le site en cliquant sur le menu burger (en haut à gauche du site). Une fonction a été codé à cet effet sans "wp_nav_menu()" puisque la structure possédait des caractéristiques qui ne ressemblait pas à un menu usuel. Nous avons opté pour "get_pages()" et un peu de travail pour décortiquer les pages parent à leurs pages enfant respectives. Pour que le design soit respecté, tous les pages parent qui ne possède pas de pages enfant doivent être mis à la toute fin avec une numérotation de la variable menu_order. 
+La fonction se trouve dans : [...]/themes/weco/lib/menu.php. (primary_menu())
+Nous l'appelons à partir de : [...]/themes/weco/templates/header.php 
+2-
+slug = "header-navigation"
+Cette navigation se trouve dans le header du site. Elle contient les sections les plus importantes du site et doit contenir peu de pages dû au design associé à celui-ci. Nous utilisons la fonction "wp_get_nav_menu_items()" pour obtenir un array de toutes les pages qui sont déjà dans le bon ordre d'apparition. Ainsi, pour éviter un walker menu et les restrictions de celui-ci par rapport aux éléments HTML, nous avons codé une function qui retourne une variable ($output) et qui contient tout le html nécessaire pour le menu de l'entête. 
+La fonction se trouve dans : [...]/themes/weco/lib/menu.php. (header_menu())
+Nous l'appelons à partir de : [...]/themes/weco/templates/header.php
+3-
+La navigation pour le menu de gauche a été créé avec un custom post type (left_sidebar). La page est modifiable, l'image en background selon la page (dans la home page) et le svg (doit être en inline) sont aussi modifiable à partir de l'admin WP, puis dans le menu "Left Sidebar Links".
+Nous l'appelons à partir de : [...]/themes/weco/templates/sidebar.php
+
